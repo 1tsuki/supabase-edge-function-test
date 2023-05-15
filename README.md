@@ -49,6 +49,7 @@ $ supabase functions serve access-postgres-without-jwt --env-file ./supabase/fun
 ```
 
 2. Access localhost:3000, click "Call Edge Function" button
+=> Works totally fine.
 
 ### Launching edge functions as shown below will result in a CORS error and interrupt the request.
 
@@ -58,3 +59,6 @@ supabase functions serve --env-file ./supabase/functions/.env --no-verify-jwt
 ```
 
  2. Access localhost:3000, click "Call Edge Function" button
+=> CORS preflight gets rejected, chrome shows error below.
+
+`Access to fetch at 'http://localhost:54321/functions/v1/access-postgres-without-jwt' from origin 'http://localhost:3000' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource. If an opaque response serves your needs, set the request's mode to 'no-cors' to fetch the resource with CORS disabled.`
