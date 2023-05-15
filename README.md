@@ -26,12 +26,6 @@ Create `./supabase/functions.env` file, copy `DB URL`.
 Don't forget to replace `localhost` with `host.docker.internal` in `DB_URL`.
 ```bash:./supabase/functions/.env
 DB_URL="postgresql://postgres:postgres@host.docker.internal:54322/postgres"
-CONNECTION_POOL_SIZE=3
-```
-
-```bash
-# reset supabase DB
-$ supabase db reset
 ```
 
 ```bash

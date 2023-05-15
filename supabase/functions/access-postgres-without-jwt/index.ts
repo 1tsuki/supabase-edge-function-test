@@ -10,10 +10,9 @@ import { corsHeaders } from "../_shared/cors.ts"
 
 // Get the connection string from the environment variable "DB_URL"
 const databaseUrl = Deno.env.get('DB_URL')!
-const connectionPoolSize = Deno.env.get('CONNECTION_POOL_SIZE')!
 
 // Create a database pool with three connections that are lazily established
-const pool = new postgres.Pool(databaseUrl, connectionPoolSize, true)
+const pool = new postgres.Pool(databaseUrl, 3, true)
 
 serve(async (req: Request): Promise<Response> => {
   if (req.method === 'OPTIONS') {
@@ -26,10 +25,9 @@ serve(async (req: Request): Promise<Response> => {
 
     try {
       const result = await connection.queryObject<string>(
-        "SELECT count(0) FROM public.accounts"
+        "SELECT 'hello world' as message"
       )
       const count = result.rows[0]
-
 
       const body = count ? JSON.stringify(count, (key, value) => (typeof value === 'bigint' ? value.toString() : value)) : undefined
       const status = count ? 200 : 204
