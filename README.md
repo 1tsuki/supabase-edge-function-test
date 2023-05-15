@@ -1,6 +1,6 @@
 # supabase-edge-function-test
 
-Repository to reproduce supabase edge function launch bug.
+Sample project to reproduce supabase edge function launch bug.
 Using nuxt3 with supabase.
 
 
