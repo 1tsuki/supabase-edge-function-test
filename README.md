@@ -1,8 +1,9 @@
 # supabase-edge-function-test
 
-Sample project to reproduce supabase edge function launch bug.
-Using nuxt3 with supabase.
+~Sample project to reproduce supabase edge function launch bug.
+Using nuxt3 with supabase.~
 
+Issue solved by using [newest Supabase CLI](https://supabase.com/docs/guides/cli#updates)
 
 ## Local Development setup
 
